@@ -12,6 +12,8 @@ jobs:
           name: Build Docker image
           command: |
             docker build --ssh=default --progress plain -t custom-alpine:latest .
+          environment:
+            DOCKER_BUILDKIT: 1
 
 workflows:
   docker:
