@@ -8,6 +8,10 @@ jobs:
       - setup_remote_docker:
           version: 20.10.2
       - checkout
+      - run:
+          name: Build Docker image
+          command: |
+            docker build --ssh=default --progress plain -t custom-alpine:latest .
 
 workflows:
   docker:
